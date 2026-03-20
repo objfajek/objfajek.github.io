@@ -345,6 +345,63 @@
     font-size: 0.78rem; color: rgba(255,255,255,0.3);
   }
 
+  /* TRAINING & CERTS */
+  #training { background: #fff; }
+  .training-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .cert-item {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: var(--green-50); border: 1px solid var(--green-100);
+    border-radius: 10px; transition: transform 0.2s;
+  }
+  .cert-item:hover { transform: translateY(-2px); }
+  .cert-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-500); flex-shrink: 0; margin-top: 0.45rem; }
+  .cert-text { font-size: 0.84rem; color: var(--text-mid); line-height: 1.55; }
+  .cert-year { font-size: 0.72rem; color: var(--gold-600); font-weight: 500; margin-top: 0.2rem; }
+
+  /* SCHOLARSHIPS */
+  #scholarships { background: var(--green-900); }
+  #scholarships .section-title { color: #fff; }
+  #scholarships .section-tag { color: var(--gold-400); }
+  .scholar-list { display: grid; gap: 1.2rem; }
+  .scholar-item {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
+    transition: background 0.2s;
+  }
+  .scholar-item:hover { background: rgba(255,255,255,0.08); }
+  .scholar-amount { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--gold-400); white-space: nowrap; min-width: 80px; }
+  .scholar-desc { font-size: 0.86rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+  .scholar-org { font-size: 0.76rem; color: rgba(255,255,255,0.4); margin-top: 0.25rem; }
+
+  /* AWARDS */
+  #awards { background: var(--cream); }
+  .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .award-card {
+    background: #fff; border: 1px solid var(--green-100);
+    border-radius: 12px; padding: 1.25rem;
+    display: flex; align-items: flex-start; gap: 0.85rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .award-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,43,26,0.08); }
+  .award-badge { width: 36px; height: 36px; border-radius: 50%; background: var(--gold-100); border: 2px solid var(--gold-400); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .award-title { font-size: 0.86rem; font-weight: 500; color: var(--green-900); line-height: 1.4; margin-bottom: 0.2rem; }
+  .award-year { font-size: 0.72rem; color: var(--gold-600); font-weight: 500; }
+
+  /* LEADERSHIP */
+  #leadership { background: var(--green-50); }
+  .leadership-grid { display: grid; gap: 1.5rem; }
+  .leader-card { background: #fff; border: 1px solid var(--green-100); border-radius: 14px; padding: 1.5rem 1.75rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .leader-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(15,43,26,0.08); }
+  .leader-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .leader-org { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+  .leader-role { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--green-900); line-height: 1.3; }
+  .leader-period { font-size: 0.72rem; font-weight: 500; color: var(--gold-600); white-space: nowrap; padding: 0.25rem 0.75rem; background: var(--gold-100); border-radius: 2rem; height: fit-content; }
+  .leader-points { list-style: none; }
+  .leader-points li { font-size: 0.84rem; color: var(--text-mid); line-height: 1.65; padding: 0.2rem 0 0.2rem 1rem; position: relative; }
+  .leader-points li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 4px; height: 4px; border-radius: 50%; background: var(--green-500); }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -394,6 +451,10 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#training">Training</a></li>
+    <li><a href="#scholarships">Grants</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#leadership">Leadership</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -536,7 +597,7 @@
 <section id="experience">
   <div class="section-inner">
     <p class="section-tag">Experience</p>
-    <h2 class="section-title">Professional Journey</h2>
+    <h2 class="section-title">Professional &amp; Teaching Journey</h2>
     <div class="divider"></div>
     <div class="timeline">
 
@@ -578,13 +639,47 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">2018 – 2021</div>
+        <div class="timeline-period">2020 – 2021</div>
         <div class="timeline-org">Teach For Nigeria</div>
-        <div class="timeline-role">Teaching Fellow &amp; Program Assistant</div>
+        <div class="timeline-role">Program Assistant</div>
         <ul class="timeline-points">
-          <li>Engaged over 210 learners (ages 5–10) in low-income communities in Ogun State, achieving 80% average academic success.</li>
-          <li>Trained 7,500+ public and private school teachers across six Nigerian states through the Teach For Nigeria × Profuturo program.</li>
-          <li>Supported the development of the School Leaders Development and Radio School programs.</li>
+          <li>Supported the development and project design of the School Leaders Development and Radio School programs.</li>
+          <li>Conducted project-based research to improve the organisation's impact.</li>
+          <li>Coordinated the office of the program director's operations, including managing activities in the program office.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">2018 – 2020</div>
+        <div class="timeline-org">Teach For Nigeria</div>
+        <div class="timeline-role">Teaching Fellow</div>
+        <ul class="timeline-points">
+          <li>Engaged tirelessly with over 210 learners (ages 5–10) in low-income communities in Ogun State, enhancing numeracy, literacy, and critical thinking — recording 80% average success.</li>
+          <li>Proactively invested in community stakeholders and learners' parents to improve learning outcomes for all students.</li>
+          <li>Drove academic and non-academic outcomes to help learners discover their unique passions and potential.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">2017 – 2018</div>
+        <div class="timeline-org">Marvellous Greatness School, Nigeria</div>
+        <div class="timeline-role">Admin Intern / Civic Education Teacher</div>
+        <ul class="timeline-points">
+          <li>Ensured 35 students (ages 10–18) participated in daily collective team-based civic education activities, recording 90% average success.</li>
+          <li>Conducted and oversaw basic administrative tasks aimed at the overall development of students and the school.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">2016 – 2017</div>
+        <div class="timeline-org">St. Bernadine Girls Grammar School, Nigeria</div>
+        <div class="timeline-role">Office Practice &amp; Commerce Teacher</div>
+        <ul class="timeline-points">
+          <li>Taught office practice and commerce to over 85 senior secondary school students (ages 10–18), with 80% passing their exams excellently.</li>
+          <li>Conducted continuous research to enhance the quality of lesson delivery and assessment methods.</li>
         </ul>
       </div>
 
@@ -680,6 +775,230 @@
   </div>
 </section>
 
+<!-- TRAINING -->
+<section id="training">
+  <div class="section-inner">
+    <p class="section-tag">Professional Development</p>
+    <h2 class="section-title">Training, Conferences &amp; Certifications</h2>
+    <div class="divider"></div>
+    <div class="training-grid">
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Essentials of Research Methodology — Alison</div><div class="cert-year">2024</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Young Entrepreneurial Leadership Programme (YELP) — Oxford Saïd Entrepreneurship Center, University of Oxford, UK</div><div class="cert-year">2022</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Teach For Nigeria Incubation Hub Program</div><div class="cert-year">2022</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Young Talents Program — Lagos Business School, Pan-Atlantic University, Nigeria</div><div class="cert-year">2022</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Certificate of Completion, Edupreneur Growth Lab — African Leadership Academy &amp; Future Fund For Education</div><div class="cert-year">2021</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">TheirWorld Global Youth Ambassador, UK</div><div class="cert-year">2020</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Alumnus, Young African Leaders Initiative (YALI) — Regional Leadership Centre (RLC), West Africa</div><div class="cert-year">2020</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Alumnus, Sozonetworks ImpactToolbox Youth In-Development</div><div class="cert-year">2020</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Alumnus, Teach For Nigeria Fellowship</div><div class="cert-year">2020</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Introduction to Fundraising — Philanthropy University &amp; Haas School of Business, UC Berkeley, USA</div><div class="cert-year">2020</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">TeachSDGs Ambassador</div><div class="cert-year">2019</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Microsoft Innovative Educator</div><div class="cert-year">2019</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Teach For Nigeria Summer Training Institute</div><div class="cert-year">2018</div></div></div>
+      <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Graduate Member, Nigerian Institute of Management (Chartered)</div><div class="cert-year">2018</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOLARSHIPS -->
+<section id="scholarships">
+  <div class="section-inner">
+    <p class="section-tag">Funding &amp; Recognition</p>
+    <h2 class="section-title">Scholarships &amp; Grants</h2>
+    <div class="divider"></div>
+    <div class="scholar-list">
+      <div class="scholar-item">
+        <div class="scholar-amount">$500</div>
+        <div><div class="scholar-desc">Purdue University College of Education Student-Led Synergy Grant — research on empowering teachers for the AI-driven classroom, case study of 50 teachers in Ibadan, Nigeria.</div><div class="scholar-org">Purdue University · 2025</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">15,000 dhs</div>
+        <div><div class="scholar-desc">UM6P Explorer Spring 2024 Cohort in partnership with MIT Sandbox Innovation Fund — R&amp;D grant for CLIED (Climate Change AI Educator) in Morocco and Nigeria.</div><div class="scholar-org">University Mohammed VI Polytechnic · 2024</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$1,500</div>
+        <div><div class="scholar-desc">Education Sport Award — Project Leader, The Huracan Foundation (Argentina), for creating a safe learning space for 70 girls in Ogun State via EduGirls Nigeria.</div><div class="scholar-org">The Huracan Foundation · 2024</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$8,834</div>
+        <div><div class="scholar-desc">WorldConnect Inc. USA — grant for Brace-Up The Young College to provide education for children in low-income communities in Ogun State.</div><div class="scholar-org">WorldConnect Inc. · 2024</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$5,007</div>
+        <div><div class="scholar-desc">WorldConnect Inc. USA — grant for the renovation of two dilapidated classrooms at Anser-Ud-Deen Primary School, Ilaro, Ogun State.</div><div class="scholar-org">WorldConnect Inc. · 2023</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$2,000</div>
+        <div><div class="scholar-desc">Education Sport Award — Project Leader, The Huracan Foundation, for creating a safe learning space for 50 girls at St. Michael Primary School, Ota, Ogun State.</div><div class="scholar-org">The Huracan Foundation · 2023</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$1,000</div>
+        <div><div class="scholar-desc">YIAGA Africa Turn Up Democracy Project — grant for using the We-Included mobile app to increase citizen participation in Nigeria's electoral space.</div><div class="scholar-org">YIAGA Africa · 2023</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$5,000</div>
+        <div><div class="scholar-desc">CivicTech Project Grant, Brain Builders Youth Development Initiative — winner of the Yvote Naija Civic Tech Hackathon; for development of the We-Included (Wi-App) mobile application.</div><div class="scholar-org">Brain Builders YDI · 2022</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$1,000</div>
+        <div><div class="scholar-desc">The Pollination Project — educational project grant for renovation of three dilapidated classrooms at Peaceful Star Royal Academy, Iyesi-Ota, Ogun State.</div><div class="scholar-org">The Pollination Project · 2022</div></div>
+      </div>
+      <div class="scholar-item">
+        <div class="scholar-amount">$100</div>
+        <div><div class="scholar-desc">Joan Agha Foundation (JAF) Start-Up and Business Grant — awarded at the 7th JAF Annual Lecture for Youth Empowerment.</div><div class="scholar-org">Joan Agha Foundation · 2022</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <p class="section-tag">Honours</p>
+    <h2 class="section-title">Awards, Honours &amp; Recognitions</h2>
+    <div class="divider"></div>
+    <div class="awards-grid">
+      <div class="award-card"><div class="award-badge">🏅</div><div><div class="award-title">Purdue University David Ross Fellowship Recipient</div><div class="award-year">2025 – 2030</div></div></div>
+      <div class="award-card"><div class="award-badge">🎓</div><div><div class="award-title">UM6P / Fondation Ibn Rochd Full Scholarship</div><div class="award-year">2023 – 2025</div></div></div>
+      <div class="award-card"><div class="award-badge">🌍</div><div><div class="award-title">The Future Africa Awards — Top 5 Nominees, Education Sector in Africa</div><div class="award-year">2024</div></div></div>
+      <div class="award-card"><div class="award-badge">⭐</div><div><div class="award-title">Top 12 Finalists — Opportunity Desk Impact Challenge for 30 Under 30</div><div class="award-year">2024</div></div></div>
+      <div class="award-card"><div class="award-badge">🏆</div><div><div class="award-title">Outstanding Youth in Leadership Award — United Nations Association of Nigeria</div><div class="award-year">2023</div></div></div>
+      <div class="award-card"><div class="award-badge">💡</div><div><div class="award-title">Top 5 YIAGA Africa Civic Tech Ideas — Technology to Influence Citizen Participation</div><div class="award-year">2023</div></div></div>
+      <div class="award-card"><div class="award-badge">🏆</div><div><div class="award-title">Winner — Brain Builders YDI Yvote Naija Civic Tech Hackathon</div><div class="award-year">2022</div></div></div>
+      <div class="award-card"><div class="award-badge">❤️</div><div><div class="award-title">Humanitarian of the Year 2022 — Future Leadership Conference, Nigeria</div><div class="award-year">2022</div></div></div>
+      <div class="award-card"><div class="award-badge">📋</div><div><div class="award-title">100 Most Influential Young People — Opportunities Hub (OH)</div><div class="award-year">2022</div></div></div>
+      <div class="award-card"><div class="award-badge">🥇</div><div><div class="award-title">Best Social Impact Project Award — US Carrington Youth Fellowship Initiative (CYFI)</div><div class="award-year">2022</div></div></div>
+      <div class="award-card"><div class="award-badge">🌟</div><div><div class="award-title">Top 3 Finalists — Hajiya Gambo Sawaba Community Impact Award, CAHR Impact Awards</div><div class="award-year">2021</div></div></div>
+      <div class="award-card"><div class="award-badge">🌟</div><div><div class="award-title">Top 3 Finalists — Apostle Hayford Allie Humanitarian Impact Award, CAHR Impact Awards</div><div class="award-year">2021</div></div></div>
+      <div class="award-card"><div class="award-badge">🎖️</div><div><div class="award-title">Outstanding Impact Award Nominee — Gani Fawehinmi Impact and Integrity Awards</div><div class="award-year">2020</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="section-inner">
+    <p class="section-tag">Service &amp; Community</p>
+    <h2 class="section-title">Leadership &amp; Voluntary Experience</h2>
+    <div class="divider"></div>
+    <div class="leadership-grid">
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">American Educational Research Association (AERA), Division B – Curriculum Studies, USA</div><div class="leader-role">Junior Graduate Student Representative, Graduate Student Council</div></div>
+          <span class="leader-period">2025 – 2027</span>
+        </div>
+        <ul class="leader-points">
+          <li>Represent Division B graduate students within the AERA Graduate Student Council, acting as liaison between students and association leadership.</li>
+          <li>Plan, chair, and participate in Division B Graduate Student programming (Fireside Chats, webinars) at the AERA Annual Meeting and throughout the year.</li>
+          <li>Cultivate community and belonging among Division B graduate students by recruiting and engaging members.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">Purdue University Graduate Student Government (PGSG), Indiana</div><div class="leader-role">Life Team Member</div></div>
+          <span class="leader-period">Aug 2025 – Present</span>
+        </div>
+        <ul class="leader-points">
+          <li>Supporting the planning and implementation of events for Purdue University postgraduate students.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">Nigeria Student Association of Purdue University (NSAP), Indiana</div><div class="leader-role">Editorial Team Member</div></div>
+          <span class="leader-period">Aug 2025 – Present</span>
+        </div>
+        <ul class="leader-points">
+          <li>Support the editorial team in compiling members' birthdays and maintaining an up-to-date membership database.</li>
+          <li>Contribute to the development of the NSAP weekly newsletter, keeping over 110 members informed and engaged.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">University Mohammed VI Polytechnic (UM6P) Climate Awareness Student Club, Morocco</div><div class="leader-role">Founder &amp; President</div></div>
+          <span class="leader-period">Oct 2023 – Jul 2025</span>
+        </div>
+        <ul class="leader-points">
+          <li>Established UM6P's first climate education club, educating thousands of students on climate change and sustainability.</li>
+          <li>Led a multinational team of 200+ members from 9+ countries, organising workshops, campaigns, and advocacy programs.</li>
+          <li>Partnered with faculty and external organisations to drive climate action and environmental sustainability initiatives.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">University Mohammed VI Polytechnic (UM6P), Africa Business School, Morocco</div><div class="leader-role">ABS Program &amp; Country Ambassador</div></div>
+          <span class="leader-period">Feb 2024 – Jul 2025</span>
+        </div>
+        <ul class="leader-points">
+          <li>Engaged with prospective students to offer firsthand perspectives on the academic program.</li>
+          <li>Shared insights into the unique features of ABS to support recruitment and outreach efforts.</li>
+          <li>Collaborated with fellow ambassadors to enhance ABS's overall representation.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">University Mohammed VI Polytechnic (UM6P) International Student Club, Morocco</div><div class="leader-role">Public Relations Officer</div></div>
+          <span class="leader-period">Oct 2023 – Oct 2024</span>
+        </div>
+        <ul class="leader-points">
+          <li>Facilitated partnerships within the UM6P International Student Club, fostering unity among diverse members.</li>
+          <li>Engaged with external organisations and academic institutions to build strategic partnerships and expand the club's reach.</li>
+          <li>Organised events that encouraged networking, cultural exchange, and collaborative initiatives.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">UM6P Sustainable Development Ambassadors Program, Morocco</div><div class="leader-role">Sustainable Development Ambassador</div></div>
+          <span class="leader-period">Feb 2024 – Jul 2025</span>
+        </div>
+        <ul class="leader-points">
+          <li>Represented an elite cohort entrusted with becoming sustainability role models for peers.</li>
+          <li>Contributed to the program's success by expanding knowledge and cultivating meaningful connections through curated events.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">UM6P Africa Business School Cultural Day Event, Morocco</div><div class="leader-role">Team Lead, Agenda &amp; Planning Committee</div></div>
+          <span class="leader-period">Dec 2023 – Feb 2024</span>
+        </div>
+        <ul class="leader-points">
+          <li>Nominated to play a vital role in organising the inaugural ABS Cultural Day event.</li>
+          <li>Led a four-person Agenda and Planning Committee, overseeing smooth communication and effective coordination.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">Teach For Nigeria × Profuturo Teachers Training, Nigeria</div><div class="leader-role">Teacher Trainer &amp; Program Facilitator</div></div>
+          <span class="leader-period">2020 – 2023</span>
+        </div>
+        <ul class="leader-points">
+          <li>Trained alongside other facilitators over 7,500 public and private primary and secondary school teachers in-person and online across Ekiti, Ogun, Lagos, Kaduna, Kano, and Katsina states.</li>
+          <li>Contributed to program objectives and fostered a positive learning environment throughout the training cycle.</li>
+        </ul>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-header">
+          <div><div class="leader-org">Mandela Washington Fellowship, Nigeria</div><div class="leader-role">Volunteer</div></div>
+          <span class="leader-period">2019</span>
+        </div>
+        <ul class="leader-points">
+          <li>Actively participated as a volunteer in the Mandela Washington Fellowship, contributing to the program's objectives and fostering a positive learning environment.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
@@ -694,7 +1013,7 @@
         <p class="signoff">Still learning. Still trying. Still believing.</p>
       </div>
       <div class="contact-items">
-        <div class="contact-item" onclick="revealEmail(this)" style="cursor:pointer;">
+        <div class="contact-item" id="email-card" style="cursor:pointer;">
           <div class="contact-icon">✉</div>
           <div>
             <div class="contact-label">Email</div>
